@@ -23,7 +23,7 @@ public class LoginViewController {
 	private JFXPasswordField pfSenha;
 	
 	@FXML
-	private Label lErroUsuario, lErroSenha;
+	private Label lErroUsuario, lErroSenha, lInativoUsuario;
 	
 	@FXML
 	public void handleSair() {
@@ -33,7 +33,7 @@ public class LoginViewController {
 	@FXML
 	public void handleLogin() {
 		testeEmptyUsuarioSenha();
-		System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()).get().getNome());
+		System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()));
 	}
 	
 	@FXML
