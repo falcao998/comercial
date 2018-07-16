@@ -68,7 +68,6 @@ public class LoginViewController {
 			teste = false;
 			lSenhaEmpty.setVisible(true);
 		}
-		
 		return teste;
 	}
 	
