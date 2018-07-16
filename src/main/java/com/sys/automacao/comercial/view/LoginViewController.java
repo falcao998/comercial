@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.sys.automacao.comercial.repository.UsuarioRepository;
+import com.sys.automacao.comercial.dao.repository.UsuarioRepository;
+import com.sys.automacao.comercial.dao.service.UsuarioDaoService;
 
 import javafx.fxml.FXML;
 
@@ -14,6 +15,8 @@ public class LoginViewController {
 	
 	@Autowired
 	private UsuarioRepository repository;
+	@Autowired
+	private UsuarioDaoService service;
 	
 	@FXML
 	private JFXTextField tfUsuario;
@@ -28,6 +31,7 @@ public class LoginViewController {
 	
 	@FXML
 	public void handleLogin() {
-		// Not used
+		if(tfUsuario.getText().trim().isEmpty())
+			System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()).get().getNome());
 	}
 }
