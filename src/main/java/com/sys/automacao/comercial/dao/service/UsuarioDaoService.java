@@ -12,7 +12,17 @@ public class UsuarioDaoService {
 	@Autowired
 	UsuarioRepository repository;
 	
-	public Usuario permissao(String user, String senha) {
-		return repository.findByUserAndSenha(user,senha);
+	public Usuario login(String user, String senha) {
+		Usuario usuario = repository.findByUserAndSenha(user,senha);
+		return usuario == null ? null : usuario;
+	}
+	
+	public Usuario loginAtivo(String user, String senha) {
+		Usuario usuario = repository.findByUserAndSenhaAndStatus(user,	senha, "ATIVO");
+		return usuario == null ? null : usuario;
+	}
+	
+	public Usuario loginInativo(String user, String senha) {
+		return repository.findByUserAndSenhaAndStatus(user,	senha, "INATIVO");
 	}
 }

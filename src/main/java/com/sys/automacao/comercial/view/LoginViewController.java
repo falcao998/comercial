@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.sys.automacao.comercial.dao.service.UsuarioDaoService;
+import com.sys.automacao.comercial.model.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -23,7 +24,7 @@ public class LoginViewController {
 	private JFXPasswordField pfSenha;
 	
 	@FXML
-	private Label lErroUsuario, lErroSenha, lInativoUsuario;
+	private Label lUsuarioEmpty, lSenhaEmpty, lUsuarioError;
 	
 	@FXML
 	public void handleSair() {
@@ -32,8 +33,13 @@ public class LoginViewController {
 	
 	@FXML
 	public void handleLogin() {
-		testeEmptyUsuarioSenha();
-		System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()));
+		if (testeEmptyUsuarioSenha()) {
+			Usuario usuario = service.loginAtivo(tfUsuario.getText(), pfSenha.getText());
+			if (usuario == null)
+				showMenssagemError();
+			else
+				testeEmptyUsuarioSenha();
+		}
 	}
 	
 	@FXML
@@ -41,8 +47,28 @@ public class LoginViewController {
 		testeEmptyUsuarioSenha();
 	}
 	
-	private void testeEmptyUsuarioSenha() {
-//		tfUsuario.getText().trim().isEmpty() ? lErroUsuario.setVisible(true) : lErroUsuario.setVisible(false));
-//		pfSenha.getText().trim().isEmpty() ? lErroSenha.setVisible(true) : lErroSenha.setVisible(false));
+	private boolean testeEmptyUsuarioSenha() {
+		
+		boolean teste = true;
+		
+		lUsuarioError.setVisible(false);
+		lUsuarioEmpty.setVisible(false);
+		lSenhaEmpty.setVisible(false);
+		
+		if (tfUsuario.getText().trim().isEmpty()) {
+			teste = false;
+			lUsuarioEmpty.setVisible(true);
+		}
+		if (pfSenha.getText().trim().isEmpty()) {
+			teste = false;
+			lSenhaEmpty.setVisible(true);
+		}
+		
+		return teste;
 	}
+	
+	private void showMenssagemError() {
+		lUsuarioError.setVisible(true);
+	}
+	
 }
