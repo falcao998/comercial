@@ -18,4 +18,8 @@ public class UsuarioSpecification {
 	public static Specification<Usuario> senha(String senha) {
 		return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get(Usuario_.senha), senha);
 	}
+	
+	public static Specification<Usuario> status(String status) {
+		return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get(Usuario_.status), status);
+	}
 }
