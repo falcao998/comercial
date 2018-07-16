@@ -24,7 +24,13 @@ public class LoginViewController {
 	private JFXPasswordField pfSenha;
 	
 	@FXML
-	private Label lUsuarioEmpty, lSenhaEmpty, lUsuarioError;
+	private Label lUsuarioEmpty;
+	
+	@FXML
+	private Label lSenhaEmpty;
+	
+	@FXML
+	private Label lUsuarioError;
 	
 	@FXML
 	public void handleSair() {
@@ -48,7 +54,6 @@ public class LoginViewController {
 	}
 	
 	private boolean testeEmptyUsuarioSenha() {
-		
 		boolean teste = true;
 		
 		lUsuarioError.setVisible(false);
