@@ -20,6 +20,6 @@ public class LoginViewController {
 	
 	@FXML
 	public void handleLogin() {
-		System.out.println(repository.findById(1).get().getNome());
+		repository.findByUserAndSenha(user, senha);
 	}
 }
