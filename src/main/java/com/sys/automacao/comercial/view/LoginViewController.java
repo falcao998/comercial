@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.sys.automacao.comercial.dao.repository.UsuarioRepository;
 import com.sys.automacao.comercial.dao.service.UsuarioDaoService;
 
 import javafx.fxml.FXML;
@@ -13,8 +12,6 @@ import javafx.fxml.FXML;
 @Component
 public class LoginViewController {
 	
-	@Autowired
-	private UsuarioRepository repository;
 	@Autowired
 	private UsuarioDaoService service;
 	
