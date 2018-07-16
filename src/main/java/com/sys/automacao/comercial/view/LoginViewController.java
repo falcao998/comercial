@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTextField;
 import com.sys.automacao.comercial.dao.service.UsuarioDaoService;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 @Component
 public class LoginViewController {
@@ -22,13 +23,26 @@ public class LoginViewController {
 	private JFXPasswordField pfSenha;
 	
 	@FXML
+	private Label lErroUsuario, lErroSenha;
+	
+	@FXML
 	public void handleSair() {
 		System.exit(0);
 	}
 	
 	@FXML
 	public void handleLogin() {
-		if(tfUsuario.getText().trim().isEmpty())
-			System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()).get().getNome());
+		testeEmptyUsuarioSenha();
+		System.out.println(service.permissao(tfUsuario.getText(), pfSenha.getText()).get().getNome());
+	}
+	
+	@FXML
+	public void handleDigitar() {
+		testeEmptyUsuarioSenha();
+	}
+	
+	private void testeEmptyUsuarioSenha() {
+//		tfUsuario.getText().trim().isEmpty() ? lErroUsuario.setVisible(true) : lErroUsuario.setVisible(false));
+//		pfSenha.getText().trim().isEmpty() ? lErroSenha.setVisible(true) : lErroSenha.setVisible(false));
 	}
 }

@@ -13,8 +13,12 @@
   <children>
     <AnchorPane layoutX="383.0" layoutY="46.0" prefHeight="308.0" prefWidth="290.0" style="-fx-background-color:#9C2B27;">
          <children>
-            <JFXTextField fx:id="tfUsuario" focusColor="WHITE" layoutX="27.0" layoutY="63.0" prefHeight="25.0" prefWidth="237.0" promptText="Usuário" style="-fx-prompt-text-fill: WHITE; -fx-text-fill: WHITE;" unFocusColor="WHITE" />
-            <JFXPasswordField fx:id="pfSenha" focusColor="WHITE" layoutX="27.0" layoutY="126.0" prefHeight="25.0" prefWidth="237.0" promptText="Senha" style="-fx-prompt-text-fill: WHITE;" unFocusColor="WHITE" />
+         	<Label fx:id="lErroUsuario" visible="false" text="Campo Usuário está vazio." layoutX="47.0" layoutY="53.0" style="-fx-text-fill: white;-fx-border-color:white; -fx-border-width: 1;-fx-border-style:solid;-fx-font-weight: bold;"/>
+            <JFXTextField fx:id="tfUsuario" focusColor="WHITE" layoutX="27.0" layoutY="75.0" prefHeight="25.0" prefWidth="237.0" promptText="Usuário" style="-fx-prompt-text-fill: WHITE; -fx-text-fill: WHITE;" unFocusColor="WHITE" />
+            
+            <Label fx:id="lErroSenha" visible="false" text="Campo Senha está vazio." layoutX="47.0" layoutY="128.0" style="-fx-text-fill: white;-fx-border-color:white; -fx-border-width: 1;-fx-border-style:solid;-fx-font-weight: bold;"/>
+            <JFXPasswordField fx:id="pfSenha" focusColor="WHITE" layoutX="27.0" layoutY="146.0" prefHeight="25.0" prefWidth="237.0" promptText="Senha" style="-fx-prompt-text-fill: WHITE;-fx-text-fill: WHITE;" unFocusColor="WHITE" />
+            
             <JFXButton layoutX="27.0" layoutY="207.0" onAction="#handleLogin" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #E45652;" text="ENTRAR" textFill="#ebe5e5">
                <font>
                   <Font name="System Bold" size="13.0" />
@@ -34,7 +38,7 @@
     </AnchorPane>
       <ImageView fitHeight="281.0" fitWidth="361.0" layoutX="14.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@resources/img/JavaFX.png" />
+            <Image url="@/img/JavaFX.png" />
          </image>
       </ImageView>
   </children>
