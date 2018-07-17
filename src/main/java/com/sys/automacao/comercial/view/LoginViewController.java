@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.sys.automacao.comercial.dao.service.UsuarioDaoService;
 import com.sys.automacao.comercial.model.Usuario;
+import com.sys.automacao.comercial.util.ExchangeStage;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +19,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 @Component
 public class LoginViewController {
 	
 	@Autowired
 	private UsuarioDaoService service;
+	
+	@Autowired
+	private ExchangeStage exchangeStage;
 	
 	@FXML
 	private AnchorPane anchorPaneLogin;
@@ -70,19 +75,20 @@ public class LoginViewController {
 	}
 	
 	public void sucessLogin() {
-		try {
+		exchangeStage.exchange("/view/Principal.fxml", StageStyle.DECORATED, anchorPaneLogin);
+		/*try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Principal.fxml"));
 			Parent root = fxmlLoader.load();
 			Scene scene = new Scene(root);
-			Stage stage = (Stage)anchorPaneLogin.getScene().getWindow();
+			Stage login = (Stage)anchorPaneLogin.getScene().getWindow();
+			Stage stage = new Stage(StageStyle.DECORATED);
 			stage.setScene(scene);
-			stage.centerOnScreen(); 
-			stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight()); 
-			stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth()); 
+			stage.centerOnScreen();
+			stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
+			stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
+			login.close();
 			stage.show();
-		}catch(IOException e) {
-			
-		}
+		}catch(IOException e) {}*/
 	}
 	
 	private boolean testeUsuarioEmpty(boolean teste) {
