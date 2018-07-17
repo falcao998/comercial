@@ -13,10 +13,10 @@ import javafx.stage.StageStyle;
 public class PrincipalViewController {
 	
 	@Autowired
-	ExchangeStage exchangeStage;
+	private ExchangeStage exchangeStage;
 	
 	@FXML
-	BorderPane borderPanePrincipal;
+	private BorderPane borderPanePrincipal;
 
 	@FXML
 	public void handleSair() {
