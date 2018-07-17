@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane disable="false" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color:#20120F;&#10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sys.automacao.comercial.view.LoginViewController">
+<AnchorPane fx:id="anchorPaneLogin" disable="false" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color:#20120F;&#10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sys.automacao.comercial.view.LoginViewController">
   <!-- TODO Add Nodes -->
   <children>
     <AnchorPane layoutX="383.0" layoutY="46.0" prefHeight="308.0" prefWidth="290.0" style="-fx-background-color:#9C2B27;">
