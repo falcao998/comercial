@@ -60,8 +60,13 @@ public class LoginViewController {
 	}
 	
 	@FXML
-	public void handleDigitar() {
-		testeEmptyUsuarioSenha();
+	public void handleDigitarUsuario() {
+		testeUsuarioEmpty(true);
+	}
+	
+	@FXML
+	public void handleDigitarSenha() {
+		testeSenhaEmpty(true);
 	}
 	
 	public void sucessLogin() {
@@ -80,21 +85,32 @@ public class LoginViewController {
 		}
 	}
 	
-	private boolean testeEmptyUsuarioSenha() {
-		boolean teste = true;
-		
-		lUsuarioError.setVisible(false);
+	private boolean testeUsuarioEmpty(boolean teste) {
 		lUsuarioEmpty.setVisible(false);
-		lSenhaEmpty.setVisible(false);
-		
 		if (tfUsuario.getText().trim().isEmpty()) {
 			teste = false;
 			lUsuarioEmpty.setVisible(true);
 		}
+		return teste;
+	}
+	
+	private boolean testeSenhaEmpty(boolean teste) {
+		lSenhaEmpty.setVisible(false);
 		if (pfSenha.getText().trim().isEmpty()) {
 			teste = false;
 			lSenhaEmpty.setVisible(true);
 		}
+		return teste;
+	}
+	
+	private boolean testeEmptyUsuarioSenha() {
+		boolean teste = true;
+		
+		lUsuarioError.setVisible(false);
+		
+		teste = testeUsuarioEmpty(teste);
+		teste = testeSenhaEmpty(teste);
+		
 		return teste;
 	}
 	
