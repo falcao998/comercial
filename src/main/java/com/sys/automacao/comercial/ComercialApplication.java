@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 @SpringBootApplication
 public class ComercialApplication extends Application {
@@ -29,6 +30,7 @@ public class ComercialApplication extends Application {
 		primaryStage.setTitle("SYS - AUTOMAÇÃO COMERCIAL");
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
 	}
 	
