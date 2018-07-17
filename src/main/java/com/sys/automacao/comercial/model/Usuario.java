@@ -20,6 +20,8 @@ public class Usuario {
 	private String user;
 	@Column(name="SENHA",nullable=false)
 	private String senha;
+	@Column(name="STATUS",nullable=false)
+	private String status;
 	
 	
 	public Integer getId() {
@@ -43,4 +45,11 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 }
