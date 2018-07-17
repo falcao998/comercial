@@ -17,8 +17,7 @@ public class ExchangeStage {
 
 	public void exchange(String screenName, StageStyle style, Pane pane) {
 		try {
-			FXMLLoader fxmlLoader;
-			fxmlLoader = new FXMLLoader(getClass().getResource(screenName));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(screenName));
 			Parent parent = fxmlLoader.load();
 			Scene scene = new Scene(parent);
 			Stage login = (Stage)pane.getScene().getWindow();

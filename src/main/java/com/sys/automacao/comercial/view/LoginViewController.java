@@ -1,7 +1,5 @@
 package com.sys.automacao.comercial.view;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,13 +10,8 @@ import com.sys.automacao.comercial.model.Usuario;
 import com.sys.automacao.comercial.util.ExchangeStage;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 @Component
@@ -75,20 +68,7 @@ public class LoginViewController {
 	}
 	
 	public void sucessLogin() {
-		exchangeStage.exchange("/view/Principal.fxml", StageStyle.DECORATED, anchorPaneLogin);
-		/*try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Principal.fxml"));
-			Parent root = fxmlLoader.load();
-			Scene scene = new Scene(root);
-			Stage login = (Stage)anchorPaneLogin.getScene().getWindow();
-			Stage stage = new Stage(StageStyle.DECORATED);
-			stage.setScene(scene);
-			stage.centerOnScreen();
-			stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
-			stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
-			login.close();
-			stage.show();
-		}catch(IOException e) {}*/
+		exchangeStage.exchange("../view/Principal.fxml", StageStyle.DECORATED, anchorPaneLogin);
 	}
 	
 	private boolean testeUsuarioEmpty(boolean teste) {

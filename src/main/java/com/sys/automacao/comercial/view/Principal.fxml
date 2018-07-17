@@ -5,15 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<BorderPane layoutX="-2.0" prefHeight="637.0" prefWidth="886.0">
+<BorderPane fx:id="borderPanePrincipal" layoutX="-2.0" prefHeight="637.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sys.automacao.comercial.view.PrincipalViewController">
 	<top>
     	<MenuBar BorderPane.alignment="CENTER">
         	<menus>
             	<Menu mnemonicParsing="false" text="Início">
               		<items>
-                		<MenuItem mnemonicParsing="false" text="Trocar Usúario" />
-                		<MenuItem mnemonicParsing="false" text="Fechar" />
+                		<MenuItem mnemonicParsing="false" text="Trocar Usúario" onAction="#hadlerTrocarUsuario" />
+                		<MenuItem mnemonicParsing="false" text="Fechar" onAction="#handleSair" />
               		</items>
             	</Menu>
             	<Menu mnemonicParsing="false" text="Cadastro">
