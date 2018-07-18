@@ -1,7 +1,7 @@
 package com.sys.automacao.comercial.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -12,9 +12,10 @@ import com.sys.automacao.comercial.util.ExchangeStage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-@Component
+@Controller
 public class LoginViewController {
 	
 	@Autowired
@@ -43,7 +44,8 @@ public class LoginViewController {
 	
 	@FXML
 	public void handleSair() {
-		System.exit(0);
+		Stage stage = (Stage)anchorPaneLogin.getScene().getWindow();
+		stage.close();
 	}
 	
 	@FXML
@@ -68,7 +70,7 @@ public class LoginViewController {
 	}
 	
 	public void sucessLogin() {
-		exchangeStage.exchange("../view/Principal.fxml", StageStyle.DECORATED, anchorPaneLogin);
+		exchangeStage.exchange("../view/Principal.fxml", StageStyle.DECORATED, anchorPaneLogin, true);
 	}
 	
 	private boolean testeUsuarioEmpty(boolean teste) {

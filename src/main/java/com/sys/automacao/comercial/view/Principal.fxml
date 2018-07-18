@@ -11,8 +11,8 @@
         	<menus>
             	<Menu mnemonicParsing="false" text="Início">
               		<items>
-                		<MenuItem mnemonicParsing="false" text="Trocar Usúario" onAction="#hadlerTrocarUsuario" />
-                		<MenuItem mnemonicParsing="false" text="Fechar" onAction="#handleSair" />
+                		<MenuItem mnemonicParsing="false" onAction="#hadlerTrocarUsuario" text="Trocar Usúario" />
+                		<MenuItem mnemonicParsing="false" onAction="#handleSair" text="Fechar" />
               		</items>
             	</Menu>
             	<Menu mnemonicParsing="false" text="Cadastro">

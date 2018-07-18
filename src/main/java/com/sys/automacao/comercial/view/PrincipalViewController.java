@@ -1,7 +1,7 @@
 package com.sys.automacao.comercial.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import com.sys.automacao.comercial.util.ExchangeStage;
 
@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.StageStyle;
 
-@Component
+@Controller
 public class PrincipalViewController {
 	
 	@Autowired
@@ -29,6 +29,6 @@ public class PrincipalViewController {
 	}
 	
 	public void sairTela() {
-		exchangeStage.exchange("../view/Login.fxml", StageStyle.UNDECORATED, borderPanePrincipal);
+		exchangeStage.exchange("../view/Login.fxml", StageStyle.UNDECORATED, borderPanePrincipal, false);
 	}
 }
